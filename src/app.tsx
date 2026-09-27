@@ -991,7 +991,8 @@ export default function App() {
               <ul className="space-y-3 text-sm text-slate-500">
                 <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  0800-KLIMAAT
+                  06 33433601
+                / 06 45577933
                 </li>
 
                 <li>info@klimaattech.nl</li>
