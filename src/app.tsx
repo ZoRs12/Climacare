@@ -941,10 +941,8 @@ export default function App() {
               </div>
 
               <p className="text-slate-500 text-sm max-w-sm mb-6 leading-relaxed">
-                Specialist in moderne, gasloze klimaatbeheersing.
-                Wij zorgen voor een perfect binnenklimaat, in de
-                hitte van de zomer én de kou van de winter.
-                Volledig F-gassen gecertificeerd.
+                Het onderhouden en beheren van klimaattechnische installaties,
+                waaronder airconditioning, ventilatiesystemen en warmtepompen.
               </p>
             </div>
 
