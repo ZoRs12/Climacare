@@ -1113,7 +1113,7 @@ export default function App() {
 
             <div className="flex gap-6">
               <a
-                href="#"
+                href="/Climacare/privacy.html"
                 className="hover:text-white transition-colors"
               >
                 Privacybeleid
