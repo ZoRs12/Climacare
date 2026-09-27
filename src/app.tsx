@@ -298,7 +298,7 @@ export default function App() {
             </div>
 
             <span className="text-2xl font-bold tracking-tight text-white">
-              Klimaat<span className="text-orange-400">Tech</span>
+              KTS
             </span>
           </a>
 
@@ -936,7 +936,7 @@ export default function App() {
                 </div>
 
                 <span className="text-xl font-bold tracking-tight text-white">
-                  Klimaat<span className="text-orange-400">Tech</span> B.V.
+                  KTS B.V.
                 </span>
               </div>
 
