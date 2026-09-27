@@ -188,6 +188,7 @@ export default function App() {
     phone: '',
     postcode: '',
     message: '',
+    consent: false,
   });
 
   const [cart, setCart] = useState<Service[]>([]);
@@ -206,6 +207,10 @@ export default function App() {
 
   const handleBookSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!formData.consent) {
+      return;
+    }
 
     const bookingSummary =
       cart.length > 0
@@ -246,6 +251,7 @@ export default function App() {
         phone: '',
         postcode: '',
         message: '',
+        consent: false,
       });
 
       setTimeout(() => {
@@ -1033,6 +1039,7 @@ export default function App() {
 
                     <input
                       type="text"
+                      required
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
                       placeholder="1234 AB, 12"
                       value={formData.postcode}
@@ -1065,9 +1072,34 @@ export default function App() {
                   />
                 </div>
 
+                <label className="flex items-start gap-3 text-sm text-slate-400">
+                  <input
+                    type="checkbox"
+                    checked={formData.consent}
+                    onChange={(e) =>
+                      setFormData((current) => ({
+                        ...current,
+                        consent: e.target.checked,
+                      }))
+                    }
+                    className="mt-1 h-4 w-4 rounded border-white/20 bg-white/5 accent-orange-500"
+                  />
+                  <span>
+                    Ik ga akkoord met het verwerken van mijn gegevens zoals beschreven in het{' '}
+                    <a
+                      href="/Climacare/privacy.html"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-cyan-400 hover:text-white underline underline-offset-2"
+                    >
+                      Privacybeleid
+                    </a>.
+                  </span>
+                </label>
+
                 <button
                   type="submit"
-                  disabled={formState !== 'idle'}
+                  disabled={formState !== 'idle' || !formData.consent}
                   className={`w-full py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 ${
                     formState === 'idle'
                       ? 'bg-gradient-dual text-white hover:opacity-90 shadow-lg hover:shadow-orange-500/25 hover:-translate-y-0.5'
@@ -1099,6 +1131,18 @@ export default function App() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* WhatsApp */}
+      <a
+        href="https://wa.me/31633433601?text=Hallo%20KTS%2C%20ik%20heb%20een%20vraag%20over%20een%20klimaattechnische%20installatie."
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Contact opnemen via WhatsApp"
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-3 px-5 py-3 rounded-full bg-emerald-500 text-white font-bold shadow-2xl hover:bg-emerald-400 hover:scale-105 transition-all"
+      >
+        WhatsApp
+        <ArrowRight className="w-5 h-5" />
+      </a>
 
       {/* Footer */}
       <footer className="bg-[#05080c] pt-16 pb-8 border-t border-white/5">
@@ -1195,6 +1239,16 @@ export default function App() {
                 </li>
                 <li>Mr. Arend van der Woudenslaan 36</li>
                 <li>3076 PP, Rotterdam</li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Mr.%20Arend%20van%20der%20Woudenslaan%2036%2C%203076%20PP%20Rotterdam"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400 hover:text-white transition-colors"
+                  >
+                    Bekijk locatie op Google Maps
+                  </a>
+                </li>
 
                 <li className="pt-2 flex flex-col gap-1">
                   <span className="text-orange-500/70">
