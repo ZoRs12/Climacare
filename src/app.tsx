@@ -376,6 +376,13 @@ export default function App() {
             </a>
 
             <a
+              href="#over-kts"
+              className="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors"
+            >
+              Over KTS
+            </a>
+
+            <a
               href="#wko"
               className="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors"
             >
@@ -451,6 +458,14 @@ export default function App() {
               className="text-lg font-medium text-slate-300"
             >
               Diensten
+            </a>
+
+            <a
+              href="#over-kts"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-lg font-medium text-slate-300"
+            >
+              Over KTS
             </a>
 
             <a
@@ -767,6 +782,186 @@ export default function App() {
                 vakkundig installeren van koeltechniek.
               </p>
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Over KTS */}
+      <section
+        id="over-kts"
+        className="py-24 relative z-10 border-t border-white/5 bg-[#0d131f]/30"
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <div>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-6 border-white/10 text-sm font-medium text-slate-200">
+                  <Wrench className="w-4 h-4 text-cyan-400" />
+                  Over KTS
+                </span>
+
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                  Klimaattechnisch beheer,
+                  <span className="text-gradient-dual"> service &amp; onderhoud</span>
+                </h2>
+
+                <p className="text-slate-400 text-lg leading-relaxed mb-6">
+                  KTS Klimaattechnisch Beheer &amp; Service richt zich op het onderhouden,
+                  beheren en installeren van klimaattechnische installaties, waaronder
+                  airconditioning, ventilatiesystemen en warmtepompen.
+                </p>
+
+                <p className="text-slate-400 leading-relaxed">
+                  Daarnaast biedt KTS service en onderhoud rondom WKO-installaties en
+                  andere verwarmings- en luchtbehandelingsapparatuur. Vanuit Rotterdam
+                  werken we gericht aan een betrouwbare en goed onderhouden installatie.
+                </p>
+
+                <div className="flex flex-wrap gap-3 mt-8">
+                  <span className="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm text-cyan-300">
+                    Airconditioning
+                  </span>
+                  <span className="px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-sm text-orange-300">
+                    Verwarming
+                  </span>
+                  <span className="px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-sm text-emerald-300">
+                    WKO
+                  </span>
+                  <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300">
+                    Ventilatie
+                  </span>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={150}>
+              <div className="glass-panel p-8 md:p-10 rounded-3xl">
+                <h3 className="text-xl font-bold text-white mb-6">
+                  Onze werkwijze
+                </h3>
+
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0 text-cyan-400 font-bold">
+                      1
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Kennismaken &amp; advies</h4>
+                      <p className="text-sm text-slate-400 mt-1">
+                        We bespreken uw situatie, installatie en wensen.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 text-orange-400 font-bold">
+                      2
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Inspectie &amp; beoordeling</h4>
+                      <p className="text-sm text-slate-400 mt-1">
+                        We bekijken wat nodig is voor onderhoud, service of installatie.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 text-emerald-400 font-bold">
+                      3
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Heldere offerte</h4>
+                      <p className="text-sm text-slate-400 mt-1">
+                        U ontvangt een duidelijk voorstel voor de afgesproken werkzaamheden.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-white font-bold">
+                      4
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Uitvoering &amp; service</h4>
+                      <p className="text-sm text-slate-400 mt-1">
+                        Na akkoord plannen we de werkzaamheden en service.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Veelgestelde vragen */}
+      <section
+        id="veelgestelde-vragen"
+        className="py-24 relative z-10 border-t border-white/5 bg-[#0a0f16]"
+      >
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">
+                Veelgestelde <span className="text-gradient-dual">vragen</span>
+              </h2>
+              <p className="text-slate-400 text-lg">
+                Heeft u een vraag over installatie, onderhoud of service?
+                Hieronder vindt u de meest voorkomende vragen.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                q: 'Doen jullie ook onderhoud aan bestaande installaties?',
+                a: 'Ja. KTS richt zich ook op service, inspectie en onderhoud van bestaande klimaattechnische installaties.'
+              },
+              {
+                q: 'Kunnen jullie airconditioning ook voor verwarming gebruiken?',
+                a: 'Ja. Een geschikte airconditioninginstallatie kan ook als lucht-lucht warmtepomp worden ingezet voor verwarming.'
+              },
+              {
+                q: 'Bieden jullie WKO service en onderhoud?',
+                a: 'Ja. KTS biedt service, onderhoud, inspectie en storingsanalyse voor WKO- en aanverwante klimaattechnische installaties.'
+              },
+              {
+                q: 'Kan ik een vrijblijvende offerte aanvragen?',
+                a: 'Ja. Gebruik het aanvraagformulier op deze website. Beschrijf zo duidelijk mogelijk uw situatie en wensen.'
+              },
+              {
+                q: 'Werken jullie alleen in Rotterdam?',
+                a: 'KTS is gevestigd in Rotterdam. Voor werkzaamheden buiten de directe omgeving kunt u contact opnemen om de mogelijkheden en beschikbaarheid te bespreken.'
+              },
+              {
+                q: 'Kan ik ook telefonisch contact opnemen?',
+                a: 'Ja. U kunt KTS bereiken via 06 33433601 of 06 45577933.'
+              }
+            ].map((item) => (
+              <div
+                key={item.q}
+                className="glass-panel p-6 rounded-2xl border-white/5"
+              >
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  {item.q}
+                </h3>
+                <p className="text-slate-400 leading-relaxed">
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-dual text-white font-bold hover:opacity-90 transition-all"
+            >
+              Neem contact op
+              <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>
@@ -1210,6 +1405,22 @@ export default function App() {
                     className="text-slate-500 hover:text-orange-400 transition-colors"
                   >
                     Onderhoudscontracten
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#wko"
+                    className="text-slate-500 hover:text-emerald-400 transition-colors"
+                  >
+                    WKO Service &amp; Onderhoud
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#veelgestelde-vragen"
+                    className="text-slate-500 hover:text-cyan-400 transition-colors"
+                  >
+                    Veelgestelde vragen
                   </a>
                 </li>
               </ul>
