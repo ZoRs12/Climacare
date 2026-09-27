@@ -996,8 +996,8 @@ export default function App() {
                 </li>
 
                 <li>info@klimaattech.nl</li>
-                <li>Warmteweg 12</li>
-                <li>3011 AA, Rotterdam</li>
+                <li>Mr. Arend van der Woudenslaan 36</li>
+                <li>3076 PP, Rotterdam</li>
 
                 <li className="pt-2 flex flex-col gap-1">
                   <span className="text-orange-500/70">
