@@ -1014,7 +1014,7 @@ export default function App() {
 
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
             <p>
-              &copy; {new Date().getFullYear()} KlimaatTech B.V.
+              &copy; {new Date().getFullYear()} KTS B.V.
               Alle rechten voorbehouden.
             </p>
 
