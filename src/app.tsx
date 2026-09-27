@@ -1000,7 +1000,7 @@ export default function App() {
 
                 <li className="pt-2 flex flex-col gap-1">
                   <span className="text-orange-500/70">
-                    KVK: 87654321
+                    KVK: 42171844
                   </span>
 
                   <span className="text-emerald-500/70 text-xs flex items-center gap-1">
