@@ -1120,7 +1120,7 @@ export default function App() {
               </a>
 
               <a
-                href="#"
+                href="/Climacare/algemene-voorwaarden.html"
                 className="hover:text-white transition-colors"
               >
                 Algemene Voorwaarden
