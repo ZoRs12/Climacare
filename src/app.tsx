@@ -938,6 +938,9 @@ export default function App() {
                 <span className="text-xl font-bold tracking-tight text-white">
                   KTS B.V.
                 </span>
+                <p className="text-slate-500 text-sm mt-2">
+                  Handelsnaam: KTS Klimaattechnisch Beheer &amp; Service
+                </p>
               </div>
 
               <p className="text-slate-500 text-sm max-w-sm mb-6 leading-relaxed">
