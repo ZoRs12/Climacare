@@ -183,6 +183,13 @@ export default function App() {
     'idle' | 'submitting' | 'success'
   >('idle');
 
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    postcode: '',
+    message: '',
+  });
+
   const [cart, setCart] = useState<Service[]>([]);
 
   useEffect(() => {
@@ -200,16 +207,51 @@ export default function App() {
   const handleBookSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    const bookingSummary =
+      cart.length > 0
+        ? cart
+            .map((item) => `- ${item.title}: €${item.priceNum}`)
+            .join('\n')
+        : '- Geen diensten geselecteerd';
+
+    const subject = encodeURIComponent(
+      `Offerteaanvraag via KTS - ${formData.name}`
+    );
+
+    const body = encodeURIComponent(
+      [
+        'Nieuwe offerteaanvraag via de website',
+        '',
+        `Naam: ${formData.name}`,
+        `Telefoonnummer: ${formData.phone}`,
+        `Postcode & huisnummer: ${formData.postcode || 'Niet ingevuld'}`,
+        '',
+        'Geselecteerde diensten:',
+        bookingSummary,
+        `Totaal (indicatie): €${cartTotal}`,
+        '',
+        'Aanvullende informatie:',
+        formData.message || 'Geen aanvullende informatie',
+      ].join('\n')
+    );
+
     setFormState('submitting');
+    window.location.href = `mailto:info@klimaattech.nl?subject=${subject}&body=${body}`;
 
     setTimeout(() => {
       setFormState('success');
       setCart([]);
+      setFormData({
+        name: '',
+        phone: '',
+        postcode: '',
+        message: '',
+      });
 
       setTimeout(() => {
         setFormState('idle');
       }, 4000);
-    }, 1500);
+    }, 500);
   };
 
   const addToCart = (service: Service) => {
@@ -319,6 +361,13 @@ export default function App() {
             </a>
 
             <a
+              href="#wko"
+              className="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors"
+            >
+              WKO Service
+            </a>
+
+            <a
               href="#contact"
               className="text-sm font-medium text-slate-300 hover:text-orange-400 transition-colors"
             >
@@ -387,6 +436,14 @@ export default function App() {
               className="text-lg font-medium text-slate-300"
             >
               Diensten
+            </a>
+
+            <a
+              href="#wko"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-lg font-medium text-slate-300"
+            >
+              WKO Service
             </a>
 
             <a
@@ -919,6 +976,13 @@ export default function App() {
                       required
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
                       placeholder="Jan Jansen"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData((current) => ({
+                          ...current,
+                          name: e.target.value,
+                        }))
+                      }
                     />
                   </div>
 
@@ -932,6 +996,13 @@ export default function App() {
                       required
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
                       placeholder="06 1234 5678"
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData((current) => ({
+                          ...current,
+                          phone: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                 </div>
@@ -964,6 +1035,13 @@ export default function App() {
                       type="text"
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
                       placeholder="1234 AB, 12"
+                      value={formData.postcode}
+                      onChange={(e) =>
+                        setFormData((current) => ({
+                          ...current,
+                          postcode: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                 </div>
@@ -977,6 +1055,13 @@ export default function App() {
                     rows={3}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all resize-none"
                     placeholder="Wilt u vooral koelen, verwarmen, of beide? Heeft u een specifieke ruimte in gedachten?"
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData((current) => ({
+                        ...current,
+                        message: e.target.value,
+                      }))
+                    }
                   />
                 </div>
 
@@ -1025,12 +1110,14 @@ export default function App() {
                   <Wind className="w-4 h-4 text-white" />
                 </div>
 
-                <span className="text-xl font-bold tracking-tight text-white">
-                  KTS B.V.
-                </span>
-                <p className="text-slate-500 text-sm mt-2">
-                  Handelsnaam: KTS Klimaattechnisch Beheer &amp; Service
-                </p>
+                <div>
+                  <span className="text-xl font-bold tracking-tight text-white">
+                    KTS B.V.
+                  </span>
+                  <p className="text-slate-500 text-sm mt-1">
+                    Handelsnaam: KTS Klimaattechnisch Beheer &amp; Service
+                  </p>
+                </div>
               </div>
 
               <p className="text-slate-500 text-sm max-w-sm mb-6 leading-relaxed">
@@ -1082,12 +1169,30 @@ export default function App() {
 
               <ul className="space-y-3 text-sm text-slate-500">
                 <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  06 33433601
-                / 06 45577933
+                  <Phone className="w-4 h-4 shrink-0" />
+                  <a
+                    href="tel:+31633433601"
+                    className="hover:text-white transition-colors"
+                  >
+                    06 33433601
+                  </a>
+                  <span>/</span>
+                  <a
+                    href="tel:+31645577933"
+                    className="hover:text-white transition-colors"
+                  >
+                    06 45577933
+                  </a>
                 </li>
 
-                <li>info@klimaattech.nl</li>
+                <li>
+                  <a
+                    href="mailto:info@klimaattech.nl"
+                    className="hover:text-white transition-colors"
+                  >
+                    info@klimaattech.nl
+                  </a>
+                </li>
                 <li>Mr. Arend van der Woudenslaan 36</li>
                 <li>3076 PP, Rotterdam</li>
 
