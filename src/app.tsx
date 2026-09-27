@@ -315,6 +315,15 @@ export default function App() {
       priceNum: 75,
       popular: false,
     },
+    {
+      id: 'wko',
+      icon: <ShieldCheck className="w-8 h-8 text-emerald-400" />,
+      title: 'WKO Service & Onderhoud',
+      desc: 'Periodiek onderhoud, inspectie en storingsanalyse voor WKO- en klimaattechnische installaties.',
+      priceText: 'Vanaf €249 / jaar',
+      priceNum: 249,
+      popular: false,
+    },
   ];
 
   return (
