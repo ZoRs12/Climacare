@@ -943,6 +943,7 @@ export default function App() {
               <p className="text-slate-500 text-sm max-w-sm mb-6 leading-relaxed">
                 Het onderhouden en beheren van klimaattechnische installaties,
                 waaronder airconditioning, ventilatiesystemen en warmtepompen.
+                Activiteit: installatie van verwarmings- en luchtbehandelingsapparatuur.
               </p>
             </div>
 
