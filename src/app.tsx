@@ -791,6 +791,96 @@ export default function App() {
         </div>
       </section>
 
+      {/* WKO Service & Onderhoud */}
+      <section
+        id="wko"
+        className="py-24 relative z-10 border-t border-white/5 bg-[#0d131f]/40"
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <div>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-6 border-white/10 text-sm font-medium text-slate-200">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  WKO Service &amp; Onderhoud
+                </span>
+
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                  Betrouwbaar beheer van uw
+                  <span className="text-gradient-dual"> WKO-installatie</span>
+                </h2>
+
+                <p className="text-slate-400 text-lg leading-relaxed mb-6">
+                  Een WKO-installatie is een belangrijk onderdeel van een duurzaam
+                  klimaatsysteem. Regelmatig service en onderhoud helpt om de installatie
+                  betrouwbaar te laten functioneren en technische problemen tijdig te signaleren.
+                </p>
+
+                <p className="text-slate-400 leading-relaxed">
+                  KTS Klimaattechnisch Beheer &amp; Service verzorgt inspectie, periodiek
+                  onderhoud, storingsanalyse en technisch advies voor klimaattechnische
+                  installaties rondom warmte- en koudeopslag.
+                </p>
+
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-gradient-dual text-white font-bold hover:opacity-90 transition-all"
+                >
+                  Plan WKO Service
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={150}>
+              <div className="glass-panel p-8 md:p-10 rounded-3xl">
+                <h3 className="text-xl font-bold text-white mb-6">
+                  Onze WKO service
+                </h3>
+
+                <div className="space-y-5">
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+                      <Wrench className="w-5 h-5 text-cyan-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Periodiek onderhoud</h4>
+                      <p className="text-sm text-slate-400 mt-1">
+                        Controle en onderhoud van relevante onderdelen en systemen.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0">
+                      <Zap className="w-5 h-5 text-orange-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Storingsanalyse</h4>
+                      <p className="text-sm text-slate-400 mt-1">
+                        Problemen opsporen en gericht adviseren over herstel en vervolgonderhoud.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Betrouwbare werking</h4>
+                      <p className="text-sm text-slate-400 mt-1">
+                        Preventief beheer om de continuïteit en technische betrouwbaarheid te ondersteunen.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section
         id="contact"
